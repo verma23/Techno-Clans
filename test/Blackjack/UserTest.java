@@ -113,7 +113,7 @@ public class UserTest {
      * Test of yes_no method, of class User.
      */
     @Test
-    public void testYes_noGood() {
+    public void testYesGood() {
         System.out.println("Yes Good Test");
         String answer = "yes";
         boolean expResult = true;
