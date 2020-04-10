@@ -39,7 +39,7 @@ public class Game {
             List<Card> hand = new ArrayList<>();
             hand.add(deck.draw());
             hand.add(deck.draw());
-            System.out.println("What amountwould you like to bet?");
+            System.out.println("What amount would you like to bet?");
             BetMoney = Bet(Money);
             System.out.println("Your money: $" + (Money - BetMoney));
             System.out.println("Pot: $" + BetMoney);
@@ -129,7 +129,7 @@ public class Game {
                     }
                 }
             }
-            System.out.println("Do you want to hit or stand?");
+            System.out.println("Do you want Play Again?");
             Scanner yesorno = new Scanner(System.in);
             String answer = yesorno.nextLine();
             while (!yes_no(answer)) {
