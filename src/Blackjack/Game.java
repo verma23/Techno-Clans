@@ -23,14 +23,14 @@ public class Game {
         int ACount;
         String Name;
 
-        System.out.println("Hi! What is your name?");
+        System.out.println("Hello sir! Enter your username.");
         Scanner scan = new Scanner(System.in);
         Name = scan.nextLine();
         System.out.println("Hello, " + Name + ", lets play some BlackJack!");
-        System.out.println("How much cash do you want to start with?");
+        System.out.println(Name+", what is your starting amount?");
         Scanner money = new Scanner(System.in);
         Money = money.nextInt();
-        System.out.println("You start with cash: " + Money);
+        System.out.println("Your money: $" + Money);
         while (Money > 0) {
             Deck deck = new Deck();
             deck.shuffleCards();
@@ -39,11 +39,11 @@ public class Game {
             List<Card> hand = new ArrayList<>();
             hand.add(deck.draw());
             hand.add(deck.draw());
-            System.out.println("How much would you like to bet?");
+            System.out.println("What amountwould you like to bet?");
             BetMoney = Bet(Money);
-            System.out.println("Cash:" + (Money - BetMoney));
-            System.out.println("Money on the table:" + BetMoney);
-            System.out.println("Here is your hand: ");
+            System.out.println("Your money: $" + (Money - BetMoney));
+            System.out.println("Pot: $" + BetMoney);
+            System.out.println("You have: ");
             System.out.println(hand);
             int handvalue = calculate(hand, ACount);
             System.out.println("The dealer is showing: ");
@@ -65,7 +65,7 @@ public class Game {
             } else {
                 if (2 * BetMoney < Money)
                 {
-                    System.out.println("Would you like to double down?");
+                    System.out.println("Would you like to double down?(double the bet)");
                     Scanner doubledown = new Scanner(System.in);
                     String doubled = doubledown.nextLine();
                     while (!yes_no(doubled)) {
@@ -75,11 +75,11 @@ public class Game {
                     if (doubled.equals("yes")) {
                         System.out.println("You have opted to double down!");
                         BetMoney = 2 * BetMoney;
-                        System.out.println("Cash:" + (Money - BetMoney));
-                        System.out.println("Money on the table:" + BetMoney);
+                        System.out.println("Your money: $" + (Money - BetMoney));
+                        System.out.println("Pot: $" + BetMoney);
                     }
                 }
-                System.out.println("Would you like to hit or stand?");
+                System.out.println("Do you want to hit or stand?");
                 Scanner hitorstand = new Scanner(System.in);
                 String hitter = hitorstand.nextLine();
                 while (!Hit_Stand(hitter)) {
@@ -129,7 +129,7 @@ public class Game {
                     }
                 }
             }
-            System.out.println("Would you like to play again?");
+            System.out.println("Do you want to hit or stand?");
             Scanner yesorno = new Scanner(System.in);
             String answer = yesorno.nextLine();
             while (!yes_no(answer)) {

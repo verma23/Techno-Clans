@@ -94,7 +94,7 @@ public class User {
 
    
     public static boolean Hit_Stand(String hitter) {
-        if (hitter.equals("hit") || hitter.equals("stand")) {
+        if (hitter.equalsIgnoreCase("hit") || hitter.equalsIgnoreCase("stand")) {
             return true;
         }
         return false;
@@ -111,7 +111,7 @@ public class User {
 
     
     public static boolean yes_no(String answer) {
-        if (answer.equals("yes") || answer.equals("no")) {
+        if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("no")) {
             return true;
         }
         return false;
